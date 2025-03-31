@@ -114,6 +114,40 @@ case $color in
         ;;
 esac
 ```
+###1.4. Operadores
+
+Comparación de números:
+
+-eq: igual a
+
+-ne: no igual a
+
+-gt: mayor que
+
+-ge: mayor o igual que
+
+-lt: menor que
+
+-le: menor o igual que
+
+Comparación de cadenas:
+
+=: igual a
+
+!=: diferente de
+
+-z: cadena vacía
+
+-n: cadena no vacía
+
+Verificación de archivos:
+
+-d: es un directorio
+
+-f: es un fichero
+
+-e: existe
+---
 
 ---
 
