@@ -1,5 +1,6 @@
 # Apuntes de Bucles y Condicionales en Bash
 
+
 ## 1. Condicionales
 
 Los condicionales permiten ejecutar diferentes bloques de código según si una condición se cumple o no.
@@ -73,28 +74,46 @@ else
 fi
 ```
 
-### 1.4. Operadores de Prueba
+### 1.4. `case`
 
-En Bash, los condicionales usan `test` o la sintaxis `[...]` para evaluar condiciones.
+La estructura `case` es útil cuando hay muchas condiciones posibles y se quiere evitar el uso de múltiples `if-elif-else`.
 
-- **Comparación de números:**
-  - `-eq`: igual a
-  - `-ne`: no igual a
-  - `-gt`: mayor que
-  - `-ge`: mayor o igual que
-  - `-lt`: menor que
-  - `-le`: menor o igual que
+#### Sintaxis:
+```bash
+case variable in
+    patron1)
+        # Comandos si variable coincide con patron1
+        ;;
+    patron2)
+        # Comandos si variable coincide con patron2
+        ;;
+    *)
+        # Comandos por defecto si no hay coincidencias
+        ;;
+esac
+```
 
-- **Comparación de cadenas:**
-  - `=`: igual a
-  - `!=`: diferente de
-  - `-z`: cadena vacía
-  - `-n`: cadena no vacía
+#### Ejemplo:
+```bash
+#!/bin/bash
+echo "Introduce un color:"
+read color
 
-- **Verificación de archivos:**
-  - `-d`: es un directorio
-  - `-f`: es un fichero
-  - `-e`: existe
+case $color in
+    rojo)
+        echo "Elegiste rojo."
+        ;;
+    azul)
+        echo "Elegiste azul."
+        ;;
+    verde)
+        echo "Elegiste verde."
+        ;;
+    *)
+        echo "Color no reconocido."
+        ;;
+esac
+```
 
 ---
 
@@ -203,5 +222,4 @@ done
 
 ---
 
-¡Practica estos conceptos creando tus propios scripts y experimenta con diferentes condiciones y bucles!
 
