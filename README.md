@@ -1,5 +1,5 @@
 # Apuntes de Bucles y Condicionales en Bash
-
+---
 
 ## 1. Condicionales
 
@@ -74,7 +74,28 @@ else
 fi
 ```
 
-### 1.4. `case`
+### 1.4. Operadores
+
+#### Comparación de números:
+- `-eq`: igual a
+- `-ne`: no igual a
+- `-gt`: mayor que
+- `-ge`: mayor o igual que
+- `-lt`: menor que
+- `-le`: menor o igual que
+
+#### Comparación de cadenas:
+- `=`: igual a
+- `!=`: diferente de
+- `-z`: cadena vacía
+- `-n`: cadena no vacía
+
+#### Verificación de archivos:
+- `-d`: es un directorio
+- `-f`: es un fichero
+- `-e`: existe
+
+### 1.5. `case`
 
 La estructura `case` es útil cuando hay muchas condiciones posibles y se quiere evitar el uso de múltiples `if-elif-else`.
 
@@ -114,40 +135,6 @@ case $color in
         ;;
 esac
 ```
-###1.4. Operadores
-
-Comparación de números:
-
--eq: igual a
-
--ne: no igual a
-
--gt: mayor que
-
--ge: mayor o igual que
-
--lt: menor que
-
--le: menor o igual que
-
-Comparación de cadenas:
-
-=: igual a
-
-!=: diferente de
-
--z: cadena vacía
-
--n: cadena no vacía
-
-Verificación de archivos:
-
--d: es un directorio
-
--f: es un fichero
-
--e: existe
----
 
 ---
 
@@ -179,14 +166,6 @@ done
 #!/bin/bash
 for archivo in *.txt; do
     echo "Procesando $archivo"
-done
-```
-
-#### Ejemplo: Usando `find` para listar ficheros
-```bash
-#!/bin/bash
-for fichero in $(find "$1" -maxdepth 1 -type f -printf "%f\n"); do
-    echo "Archivo: $fichero"
 done
 ```
 
@@ -240,6 +219,11 @@ done
   Siempre utiliza comillas alrededor de las variables (por ejemplo, `"$variable"`) para evitar problemas con espacios o caracteres especiales.
 
 - **Incremento de variables:**  
+  Puedes incrementar variables de dos formas:
+  - **Expansión aritmética:**  
+    ```bash
+    contador=$((contador + 1))
+    ```
   - **Usando `expr`:**  
     ```bash
     contador=$(expr $contador + 1)
@@ -251,4 +235,5 @@ done
 
 ---
 
+¡Practica estos conceptos creando tus propios scripts y experimenta con diferentes condiciones y bucles!
 
