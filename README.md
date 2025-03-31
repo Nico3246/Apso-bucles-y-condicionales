@@ -219,11 +219,7 @@ done
   Siempre utiliza comillas alrededor de las variables (por ejemplo, `"$variable"`) para evitar problemas con espacios o caracteres especiales.
 
 - **Incremento de variables:**  
-  Puedes incrementar variables de dos formas:
-  - **Expansión aritmética:**  
-    ```bash
-    contador=$((contador + 1))
-    ```
+
   - **Usando `expr`:**  
     ```bash
     contador=$(expr $contador + 1)
@@ -234,6 +230,4 @@ done
   Algunas opciones de `find` (como `-maxdepth`) deben colocarse antes de otros predicados para evitar advertencias.
 
 ---
-
-¡Practica estos conceptos creando tus propios scripts y experimenta con diferentes condiciones y bucles!
 
